@@ -5,7 +5,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 app = Flask(__name__)
-DB_PATH = 'db/patients.db'
+import tempfile
+DB_PATH = os.path.join(tempfile.gettempdir(), 'patients.db')
 
 def init_db():
     os.makedirs('db', exist_ok=True)
