@@ -9,7 +9,6 @@ import tempfile
 DB_PATH = os.path.join(tempfile.gettempdir(), 'patients.db')
 
 def init_db():
-    os.makedirs('db', exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
     c.execute('''
